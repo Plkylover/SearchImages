@@ -132,18 +132,18 @@ window.addEventListener('load', ()=>{
     localStorage.setItem("src", event.currentTarget.firstElementChild.src)
     localStorage.setItem("text", event.currentTarget.dataset.text)
     location.href = 'details.html'
-    for (let i = 0; i < childs.length; i++) {
-    if (childs[i].dataset.tags.toUpperCase().includes(event.currentTarget.dataset.tags.toUpperCase()) || event.currentTarget.dataset.tags.toUpperCase().includes(childs[i].dataset.tags.toUpperCase())) {
-      numImg++
-      localStorage.setItem(`img${numImg}`, childs[i].firstElementChild.src)
-      localStorage.setItem(`img${numImg}T`, childs[i].dataset)
-    }
+for (let i = 0; i < childs.length; i++) {
+  if (childs[i].dataset.tags.toUpperCase().includes(event.currentTarget.dataset.tags.toUpperCase()) || event.currentTarget.dataset.tags.toUpperCase().includes(childs[i].dataset.tags.toUpperCase())) {
+    numImg++
+    localStorage.setItem(`img${numImg}`, childs[i].firstElementChild.src)
+    localStorage.setItem(`img${numImg}T`, childs[i].dataset.text)
   }
-  localStorage.setItem('images', numImg)
-  })
+}
+localStorage.setItem('images', numImg)
+})
 }
 })
-input.addEventListener('input', ()=>{
+input.addEventListener('input', () => {
   let numberImage = 0
   for (let i = 0; i < childs.length; i++) {
     childs[i].style.display = 'none'
@@ -155,15 +155,14 @@ input.addEventListener('input', ()=>{
     }
   }
   if (screen.width < 800) {
-imgcontainer.style.width = '100%'
-imgcontainer.style.height = `${numberImage*100}vw`
-}
-else{
-imgcontainer.style.width = '100%'
-imgcontainer.style.height = `${numberImage*40}vw`
-}
-})
-btn.addEventListener('click',()=>{
-  event.preventDefault()
+    imgcontainer.style.width = '100%'
+    imgcontainer.style.height = `${numberImage*100}vw`
+  } else {
+    imgcontainer.style.width = '100%'
+    imgcontainer.style.height = `${numberImage*40}vw`
+  }
+}) 
+btn.addEventListener('click', () => {
+  event.preventDefault() 
   input.value = ''
 })
