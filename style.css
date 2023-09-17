@@ -32,6 +32,7 @@ nav img{
 ::placeholder{
   color: royalblue;
   text-align: center;
+  font-size: 1.1em;
 }
 input{
   width: 60vw;
@@ -79,6 +80,6 @@ div img{
   object-fit: fill;
 }
 button{
-  width: 10vw;
+  width: 15vw;
 }
-}
+    }
